@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LYFriendTrendsController : UITableViewController
+@interface LYFriendTrendsController : UIViewController
 
 @end

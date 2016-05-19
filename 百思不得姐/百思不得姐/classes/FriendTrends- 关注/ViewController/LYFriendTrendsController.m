@@ -19,9 +19,9 @@
     
     self.navigationItem.title = @"我的关注";
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"friendsRecommentIcon"] selectedImage:[UIImage imageNamed:@"friendsRecommentIcon-click"] target:self action:@selector(tagClick)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"friendsRecommentIcon"] selectedImage:[UIImage imageNamed:@"friendsRecommentIcon-click"] target:self action:@selector(friendClick)];
 }
-- (void)tagClick
+- (void)friendClick
 {
 
 
