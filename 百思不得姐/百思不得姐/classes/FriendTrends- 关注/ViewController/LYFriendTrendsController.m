@@ -8,6 +8,8 @@
 
 #import "LYFriendTrendsController.h"
 
+#import "LYRecommendViewController.h"
+
 @interface LYFriendTrendsController ()
 
 @end
@@ -24,7 +26,7 @@
 - (void)friendClick
 {
 
-
+    [self.navigationController pushViewController:[[LYRecommendViewController alloc] init] animated:YES];
 
 }
 - (void)didReceiveMemoryWarning {

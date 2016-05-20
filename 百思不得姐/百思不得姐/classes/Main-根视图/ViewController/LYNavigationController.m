@@ -25,9 +25,10 @@
     {
         //设置一个自定义反悔button
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setBackgroundImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
-        [btn setBackgroundImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
         [btn setTitle:@"返回" forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+        
         
         btn.size = CGSizeMake(70, 30);
         //设置左对齐
@@ -41,9 +42,9 @@
         
         [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchDown];
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-        //设置push控制器的title
+        //设置push控制器的title在自己的控制器中设置就好
         
-        viewController.title = @"xxx";
+        
         //把标签控制器隐藏
         
         viewController.hidesBottomBarWhenPushed = YES;

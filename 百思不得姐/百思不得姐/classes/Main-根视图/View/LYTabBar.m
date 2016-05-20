@@ -18,8 +18,10 @@
     self = [super initWithFrame:frame];
     if (self)
     {
+        [self setBackgroundImage:[UIImage imageNamed:@"tabbar-light"]];
+        
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateSelected];
+        [btn setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
         
         [btn setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [self addSubview:btn];

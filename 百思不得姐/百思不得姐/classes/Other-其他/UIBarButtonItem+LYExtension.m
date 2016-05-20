@@ -12,9 +12,9 @@
 + (instancetype)itemWithImage:(UIImage *)image selectedImage:(UIImage *)selectedImage target:(id)target action:(SEL)action
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setBackgroundImage:selectedImage forState:UIControlStateSelected];
+    [btn setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
     [btn setBackgroundImage:image forState:UIControlStateNormal];
-    [btn addTarget:target action:@selector(action) forControlEvents: UIControlEventTouchUpInside];
+    [btn addTarget:target action:action forControlEvents: UIControlEventTouchUpInside];
     
     btn.size = btn.currentBackgroundImage.size;
     

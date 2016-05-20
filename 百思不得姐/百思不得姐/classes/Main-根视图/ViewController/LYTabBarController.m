@@ -30,7 +30,7 @@
     attrSeletedTitle [NSFontAttributeName] = [UIFont systemFontOfSize:12];
     attrSeletedTitle [NSForegroundColorAttributeName] = [UIColor darkGrayColor];
     
-    [tabBarItem setTitleTextAttributes:attrTitle forState:UIControlStateSelected];
+    [tabBarItem setTitleTextAttributes:attrTitle forState:UIControlStateNormal];
     [tabBarItem setTitleTextAttributes:attrSeletedTitle forState:UIControlStateSelected];
     
 }
@@ -60,6 +60,7 @@
 - (void)setUpEveryViewController:(UIViewController *)vc image:(UIImage *)image selectedImage:(UIImage *)selectedImage title:(NSString *)title
 {
    
+    vc.navigationItem.title = title;
     vc.tabBarItem.image = image;
     vc.tabBarItem.selectedImage = selectedImage;
     vc.tabBarItem.title = title;

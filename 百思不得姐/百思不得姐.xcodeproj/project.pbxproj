@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B1AB2EF1CEEA92D004995A2 /* LYRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1AB2EE1CEEA92D004995A2 /* LYRecommendViewController.xib */; };
+		6B1AB2F21CEEB2A7004995A2 /* LYRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2F11CEEB2A7004995A2 /* LYRecommendCategory.m */; };
+		6B1AB2F51CEEB89F004995A2 /* LYRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2F41CEEB89F004995A2 /* LYRecommendCell.m */; };
+		6B1AB2F71CEEB8AE004995A2 /* LYRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1AB2F61CEEB8AE004995A2 /* LYRecommendCell.xib */; };
+		6B1AB2FA1CEEE1DD004995A2 /* LYRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2F91CEEE1DD004995A2 /* LYRecommendUser.m */; };
+		6B1AB2FE1CEEEA54004995A2 /* LYRecommendUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2FC1CEEEA53004995A2 /* LYRecommendUserCell.m */; };
+		6B1AB2FF1CEEEA54004995A2 /* LYRecommendUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1AB2FD1CEEEA53004995A2 /* LYRecommendUserCell.xib */; };
 		6BB948231CED6488000E6CE5 /* LYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB9480D1CED6488000E6CE5 /* LYTabBar.m */; };
 		6BB948241CED6488000E6CE5 /* LYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB948101CED6488000E6CE5 /* LYTabBarController.m */; };
 		6BB948251CED6488000E6CE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB9481B1CED6488000E6CE5 /* AppDelegate.m */; };
@@ -19,10 +26,12 @@
 		6BB948391CED7162000E6CE5 /* UIBarButtonItem+LYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB948381CED7162000E6CE5 /* UIBarButtonItem+LYExtension.m */; };
 		6BB9483C1CED83E4000E6CE5 /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB9483B1CED83E4000E6CE5 /* LYNavigationController.m */; };
 		6BB9483E1CED93F8000E6CE5 /* LYFriendTrendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB9483D1CED93F8000E6CE5 /* LYFriendTrendsController.xib */; };
+		6BB948411CEDA9E0000E6CE5 /* LYRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB948401CEDA9E0000E6CE5 /* LYRecommendViewController.m */; };
 		6BF2E5AE1CEC12B1009FEC87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF2E5AC1CEC12B1009FEC87 /* Main.storyboard */; };
 		6BF2E5B01CEC12B2009FEC87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF2E5AF1CEC12B2009FEC87 /* Images.xcassets */; };
 		6BF2E5B31CEC12B2009FEC87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF2E5B11CEC12B2009FEC87 /* LaunchScreen.xib */; };
 		6BF2E5BF1CEC12B2009FEC87 /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF2E5BE1CEC12B2009FEC87 /* _____Tests.m */; };
+		D384069C4009BB08EDA2E959 /* libPods-百思不得姐.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F13D7301B48F203D4BC240 /* libPods-百思不得姐.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +45,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B45021F8892E3917CC6D4F7 /* Pods-百思不得姐.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐.debug.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐.debug.xcconfig"; sourceTree = "<group>"; };
+		5CA081EA33BA78015ACF9731 /* Pods-百思不得姐.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐.release.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐.release.xcconfig"; sourceTree = "<group>"; };
+		68F13D7301B48F203D4BC240 /* libPods-百思不得姐.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-百思不得姐.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1AB2EE1CEEA92D004995A2 /* LYRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYRecommendViewController.xib; sourceTree = "<group>"; };
+		6B1AB2F01CEEB2A7004995A2 /* LYRecommendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendCategory.h; sourceTree = "<group>"; };
+		6B1AB2F11CEEB2A7004995A2 /* LYRecommendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendCategory.m; sourceTree = "<group>"; };
+		6B1AB2F31CEEB89F004995A2 /* LYRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendCell.h; sourceTree = "<group>"; };
+		6B1AB2F41CEEB89F004995A2 /* LYRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendCell.m; sourceTree = "<group>"; };
+		6B1AB2F61CEEB8AE004995A2 /* LYRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYRecommendCell.xib; sourceTree = "<group>"; };
+		6B1AB2F81CEEE1DD004995A2 /* LYRecommendUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendUser.h; sourceTree = "<group>"; };
+		6B1AB2F91CEEE1DD004995A2 /* LYRecommendUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendUser.m; sourceTree = "<group>"; };
+		6B1AB2FB1CEEEA53004995A2 /* LYRecommendUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendUserCell.h; sourceTree = "<group>"; };
+		6B1AB2FC1CEEEA53004995A2 /* LYRecommendUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendUserCell.m; sourceTree = "<group>"; };
+		6B1AB2FD1CEEEA53004995A2 /* LYRecommendUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYRecommendUserCell.xib; sourceTree = "<group>"; };
 		6BB9480C1CED6488000E6CE5 /* LYTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTabBar.h; sourceTree = "<group>"; };
 		6BB9480D1CED6488000E6CE5 /* LYTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTabBar.m; sourceTree = "<group>"; };
 		6BB9480F1CED6488000E6CE5 /* LYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTabBarController.h; sourceTree = "<group>"; };
@@ -59,6 +82,8 @@
 		6BB9483A1CED83E4000E6CE5 /* LYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYNavigationController.h; sourceTree = "<group>"; };
 		6BB9483B1CED83E4000E6CE5 /* LYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYNavigationController.m; sourceTree = "<group>"; };
 		6BB9483D1CED93F8000E6CE5 /* LYFriendTrendsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYFriendTrendsController.xib; sourceTree = "<group>"; };
+		6BB9483F1CEDA9E0000E6CE5 /* LYRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendViewController.h; sourceTree = "<group>"; };
+		6BB948401CEDA9E0000E6CE5 /* LYRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendViewController.m; sourceTree = "<group>"; };
 		6BF2E59F1CEC12B1009FEC87 /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF2E5A31CEC12B1009FEC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BF2E5AD1CEC12B1009FEC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D384069C4009BB08EDA2E959 /* libPods-百思不得姐.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1119204725469755CF7BE311 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B45021F8892E3917CC6D4F7 /* Pods-百思不得姐.debug.xcconfig */,
+				5CA081EA33BA78015ACF9731 /* Pods-百思不得姐.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6BB948001CED6488000E6CE5 /* classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +181,10 @@
 		6BB948061CED6488000E6CE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B1AB2F01CEEB2A7004995A2 /* LYRecommendCategory.h */,
+				6B1AB2F11CEEB2A7004995A2 /* LYRecommendCategory.m */,
+				6B1AB2F81CEEE1DD004995A2 /* LYRecommendUser.h */,
+				6B1AB2F91CEEE1DD004995A2 /* LYRecommendUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +192,12 @@
 		6BB948071CED6488000E6CE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B1AB2F31CEEB89F004995A2 /* LYRecommendCell.h */,
+				6B1AB2F41CEEB89F004995A2 /* LYRecommendCell.m */,
+				6B1AB2F61CEEB8AE004995A2 /* LYRecommendCell.xib */,
+				6B1AB2FB1CEEEA53004995A2 /* LYRecommendUserCell.h */,
+				6B1AB2FC1CEEEA53004995A2 /* LYRecommendUserCell.m */,
+				6B1AB2FD1CEEEA53004995A2 /* LYRecommendUserCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +208,9 @@
 				6BB9482B1CED66C4000E6CE5 /* LYFriendTrendsController.h */,
 				6BB9482C1CED66C4000E6CE5 /* LYFriendTrendsController.m */,
 				6BB9483D1CED93F8000E6CE5 /* LYFriendTrendsController.xib */,
+				6BB9483F1CEDA9E0000E6CE5 /* LYRecommendViewController.h */,
+				6BB948401CEDA9E0000E6CE5 /* LYRecommendViewController.m */,
+				6B1AB2EE1CEEA92D004995A2 /* LYRecommendViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -315,6 +363,8 @@
 				6BF2E5A11CEC12B1009FEC87 /* 百思不得姐 */,
 				6BF2E5BB1CEC12B2009FEC87 /* 百思不得姐Tests */,
 				6BF2E5A01CEC12B1009FEC87 /* Products */,
+				1119204725469755CF7BE311 /* Pods */,
+				EAD2D8FE62AE171B11DB2372 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -364,6 +414,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EAD2D8FE62AE171B11DB2372 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68F13D7301B48F203D4BC240 /* libPods-百思不得姐.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,9 +429,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BF2E5C21CEC12B2009FEC87 /* Build configuration list for PBXNativeTarget "百思不得姐" */;
 			buildPhases = (
+				5B5747100AA11F16A3ADF75F /* 📦 Check Pods Manifest.lock */,
 				6BF2E59B1CEC12B1009FEC87 /* Sources */,
 				6BF2E59C1CEC12B1009FEC87 /* Frameworks */,
 				6BF2E59D1CEC12B1009FEC87 /* Resources */,
+				3A682F5EC1CCBA1F6F4EFE00 /* 📦 Embed Pods Frameworks */,
+				F52BBE6348A88A90879D45F4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -445,8 +506,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B1AB2FF1CEEEA54004995A2 /* LYRecommendUserCell.xib in Resources */,
 				6BF2E5AE1CEC12B1009FEC87 /* Main.storyboard in Resources */,
+				6B1AB2EF1CEEA92D004995A2 /* LYRecommendViewController.xib in Resources */,
 				6BF2E5B31CEC12B2009FEC87 /* LaunchScreen.xib in Resources */,
+				6B1AB2F71CEEB8AE004995A2 /* LYRecommendCell.xib in Resources */,
 				6BB9483E1CED93F8000E6CE5 /* LYFriendTrendsController.xib in Resources */,
 				6BF2E5B01CEC12B2009FEC87 /* Images.xcassets in Resources */,
 			);
@@ -461,6 +525,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A682F5EC1CCBA1F6F4EFE00 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B5747100AA11F16A3ADF75F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F52BBE6348A88A90879D45F4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6BF2E59B1CEC12B1009FEC87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -470,12 +582,17 @@
 				6BB9482A1CED66A4000E6CE5 /* LYEssenseViewController.m in Sources */,
 				6BB9483C1CED83E4000E6CE5 /* LYNavigationController.m in Sources */,
 				6BB948241CED6488000E6CE5 /* LYTabBarController.m in Sources */,
+				6B1AB2FA1CEEE1DD004995A2 /* LYRecommendUser.m in Sources */,
+				6BB948411CEDA9E0000E6CE5 /* LYRecommendViewController.m in Sources */,
+				6B1AB2F51CEEB89F004995A2 /* LYRecommendCell.m in Sources */,
 				6BB948271CED6488000E6CE5 /* UIView+LYFrame.m in Sources */,
 				6BB9482D1CED66C4000E6CE5 /* LYFriendTrendsController.m in Sources */,
 				6BB948231CED6488000E6CE5 /* LYTabBar.m in Sources */,
+				6B1AB2F21CEEB2A7004995A2 /* LYRecommendCategory.m in Sources */,
 				6BB948301CED66E8000E6CE5 /* LYMeViewController.m in Sources */,
 				6BB948261CED6488000E6CE5 /* main.m in Sources */,
 				6BB948391CED7162000E6CE5 /* UIBarButtonItem+LYExtension.m in Sources */,
+				6B1AB2FE1CEEEA54004995A2 /* LYRecommendUserCell.m in Sources */,
 				6BB948251CED6488000E6CE5 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +717,7 @@
 		};
 		6BF2E5C31CEC12B2009FEC87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B45021F8892E3917CC6D4F7 /* Pods-百思不得姐.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "百思不得姐/classes/Other-其他/LYSisters.pch";
@@ -611,6 +729,7 @@
 		};
 		6BF2E5C41CEC12B2009FEC87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CA081EA33BA78015ACF9731 /* Pods-百思不得姐.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "百思不得姐/classes/Other-其他/LYSisters.pch";
