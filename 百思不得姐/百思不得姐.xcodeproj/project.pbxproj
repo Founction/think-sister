@@ -20,6 +20,8 @@
 		6BA2EC3E1CF06F4800678794 /* LYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2EC3D1CF06F4800678794 /* LYTextField.m */; };
 		6BA2EC411CF0945D00678794 /* LYPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2EC401CF0945D00678794 /* LYPushGuideView.m */; };
 		6BA2EC431CF0946900678794 /* LYPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2EC421CF0946900678794 /* LYPushGuideView.xib */; };
+		6BA2EC461CF0A66300678794 /* LYEssenceTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2EC451CF0A66300678794 /* LYEssenceTitleView.m */; };
+		6BA2EC491CF0A77300678794 /* LYEssenseTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2EC481CF0A77300678794 /* LYEssenseTitle.m */; };
 		6BB948231CED6488000E6CE5 /* LYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB9480D1CED6488000E6CE5 /* LYTabBar.m */; };
 		6BB948241CED6488000E6CE5 /* LYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB948101CED6488000E6CE5 /* LYTabBarController.m */; };
 		6BB948251CED6488000E6CE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB9481B1CED6488000E6CE5 /* AppDelegate.m */; };
@@ -75,6 +77,10 @@
 		6BA2EC3F1CF0945D00678794 /* LYPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYPushGuideView.h; sourceTree = "<group>"; };
 		6BA2EC401CF0945D00678794 /* LYPushGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYPushGuideView.m; sourceTree = "<group>"; };
 		6BA2EC421CF0946900678794 /* LYPushGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYPushGuideView.xib; sourceTree = "<group>"; };
+		6BA2EC441CF0A66300678794 /* LYEssenceTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYEssenceTitleView.h; sourceTree = "<group>"; };
+		6BA2EC451CF0A66300678794 /* LYEssenceTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYEssenceTitleView.m; sourceTree = "<group>"; };
+		6BA2EC471CF0A77300678794 /* LYEssenseTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYEssenseTitle.h; sourceTree = "<group>"; };
+		6BA2EC481CF0A77300678794 /* LYEssenseTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYEssenseTitle.m; sourceTree = "<group>"; };
 		6BB9480C1CED6488000E6CE5 /* LYTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTabBar.h; sourceTree = "<group>"; };
 		6BB9480D1CED6488000E6CE5 /* LYTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTabBar.m; sourceTree = "<group>"; };
 		6BB9480F1CED6488000E6CE5 /* LYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTabBarController.h; sourceTree = "<group>"; };
@@ -164,6 +170,8 @@
 		6BB948021CED6488000E6CE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6BA2EC471CF0A77300678794 /* LYEssenseTitle.h */,
+				6BA2EC481CF0A77300678794 /* LYEssenseTitle.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +179,8 @@
 		6BB948031CED6488000E6CE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6BA2EC441CF0A66300678794 /* LYEssenceTitleView.h */,
+				6BA2EC451CF0A66300678794 /* LYEssenceTitleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -618,11 +628,13 @@
 				6BA2EC371CF035A500678794 /* LYLoginRigesterViewController.m in Sources */,
 				6BA2EC3E1CF06F4800678794 /* LYTextField.m in Sources */,
 				6BB948231CED6488000E6CE5 /* LYTabBar.m in Sources */,
+				6BA2EC491CF0A77300678794 /* LYEssenseTitle.m in Sources */,
 				6B1AB2F21CEEB2A7004995A2 /* LYRecommendCategory.m in Sources */,
 				6BA2EC3B1CF0406C00678794 /* LYVerticalButton.m in Sources */,
 				6BA2EC411CF0945D00678794 /* LYPushGuideView.m in Sources */,
 				6BB948301CED66E8000E6CE5 /* LYMeViewController.m in Sources */,
 				6BB948261CED6488000E6CE5 /* main.m in Sources */,
+				6BA2EC461CF0A66300678794 /* LYEssenceTitleView.m in Sources */,
 				6BB948391CED7162000E6CE5 /* UIBarButtonItem+LYExtension.m in Sources */,
 				6B1AB2FE1CEEEA54004995A2 /* LYRecommendUserCell.m in Sources */,
 				6BB948251CED6488000E6CE5 /* AppDelegate.m in Sources */,

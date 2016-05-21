@@ -7,8 +7,12 @@
 //
 
 #import "LYEssenseViewController.h"
+#import "LYEssenseTitle.h"
+#import "LYEssenceTitleView.h"
 
 @interface LYEssenseViewController ()
+/* titleNames */
+@property (strong, nonatomic) NSArray * titleNames;
 
 @end
 
@@ -17,18 +21,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    [self setUpNav];
     
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"MainTagSubIconClick"] style:UIBarButtonItemStylePlain target:self action:@selector(tagClick)];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"MainTagSubIconClick"] style:UIBarButtonItemStyleDone target:self action:@selector(tagClick)];
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [btn setBackgroundImage:forState:UIControlStateSelected];
-//    [btn setBackgroundImage:forState:UIControlStateNormal];
-//    [btn addTarget:self action:@selector(tagClick) forControlEvents:UIControlStateSelected];
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"MainTagSubIcon"]  selectedImage:[UIImage imageNamed:@"MainTagSubIconClick"]  target:self action:@selector(tagClick)];
+    [self setUpTitleView];
 }
+- (void)setUpTitleView
+{
+    NSArray *arr = @[@"全部",@"视频", @"声音", @"图片", @"段子"];
+    self.titleNames = [LYEssenseTitle initWithArray:arr];
+    LYEssenceTitleView *titleV = [[LYEssenceTitleView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, 35)];
+    titleV.titles = _titleNames;
+    titleV.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+    
+    [self.view addSubview:titleV];
+    
+}
+- (void)setUpNav
+{
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
 
-
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"MainTagSubIcon"]  selectedImage:[UIImage imageNamed:@"MainTagSubIconClick"]  target:self action:@selector(tagClick)];
+    
+    self.view.backgroundColor = LYGlobleBg;
+}
 - (void)tagClick
 {
 

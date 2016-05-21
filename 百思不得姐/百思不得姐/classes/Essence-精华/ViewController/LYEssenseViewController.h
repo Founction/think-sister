@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LYEssenseViewController : UITableViewController
+@interface LYEssenseViewController : UIViewController
 
 @end
