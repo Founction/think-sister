@@ -13,6 +13,8 @@
 #import "LYRecommendCategory.h"
 #import "LYRecommendCell.h"
 #import "LYRecommendUser.h"
+#import "LYRecommendUserCell.h"
+#import <MJRefresh.h>
 
 
 static NSString *LYCategoryID = @"category";
@@ -24,6 +26,11 @@ static NSString *LYSubCategoryID = @"subcategory";
 @property (strong, nonatomic) NSArray * categories;
 /* recommend user */
 @property (strong, nonatomic) NSArray * recommendUsers;
+/* clicked model */
+@property (strong, nonatomic) LYRecommendCategory * clickedCategory;
+/* 纪录最后一次请求 */
+@property (strong, nonatomic) NSMutableDictionary * param;
+
 
 @end
 
@@ -34,15 +41,23 @@ static NSString *LYSubCategoryID = @"subcategory";
     
     [self setUpTableView];
    
-    
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
+    [self setUpRefresh];
+    
+    [self setUpCategories];
+    
+    
+}
+//加载左侧数据
+- (void)setUpCategories
+{
     /**
      *  开始请求数据，
      *  1、设置请求参数param 为一个字典可变
      *  2、发送请求。
      *  3、解析数据
-     *  
+     *
      */
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"category";
@@ -58,21 +73,114 @@ static NSString *LYSubCategoryID = @"subcategory";
         
         [self.catagoriesTableView reloadData];
         
-    
-    
+        
     }failure:^(NSURLSessionDataTask *task, NSError *error){
-    
-    
-    
+        
+        
+        
     }];
-    
+
+
 }
+//设置header 和 footer
+- (void)setUpRefresh
+{
+
+    self.subCategoryTableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewUsers)];
+    
+    self.subCategoryTableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
+    
+//    self.subCategoryTableView.footer.hidden = YES;
+
+
+}
+//右侧下拉刷新
+- (void)loadNewUsers
+{
+
+    self.clickedCategory.page = 1;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"subscribe";
+    params[@"category_id"] = @(self.clickedCategory.id);
+    params[@"page"] = @(self.clickedCategory.page);
+    self.param = params;
+    
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask *task,id responseObject){
+        
+        //为了避免每次请求都会将添加到模型数组中，导致数组变大。每次刷新的时候应该把之前保存的模型数组删除
+        [self.clickedCategory.usrs removeAllObjects];
+        //获得数据的总数
+        self.clickedCategory.total = [responseObject[@"total"] integerValue];
+        //获得更新数据模型数组
+        [self.clickedCategory.usrs addObjectsFromArray:[LYRecommendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]]];
+        
+        if (self.param != params)  return ;
+        
+        [self.subCategoryTableView reloadData];
+        //停止刷新,只有显示的表才考虑结束刷新。之前的请求不用考虑结束刷新
+        [self.subCategoryTableView.header endRefreshing];
+        
+        [self checkFooterState];
+    } failure:^(NSURLSessionDataTask *task, NSError *error){
+        
+        
+    }];
+
+}
+//右侧上拉加载跟多
+- (void)loadMoreUsers
+{
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"subscribe";
+    params[@"category_id"] = @(self.clickedCategory.id);
+    
+    params[@"page"] = @(++self.clickedCategory.page);
+    self.param = params;
+    
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask *task,id responseObject){
+        
+//        self.clickedCategory.usrs = [LYRecommendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+ 
+        
+//        [self.clickedCategory.usrs arrayByAddingObjectsFromArray:[LYRecommendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]]];
+        
+        [self.clickedCategory.usrs addObjectsFromArray:[LYRecommendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]]];
+        
+        if (self.param != params) return ;
+        
+        [self.subCategoryTableView reloadData];
+        
+        //停止刷新,只有显示的表才考虑结束刷新。之前的请求不用考虑结束刷新
+        [self.subCategoryTableView.header endRefreshing];
+        
+        [self checkFooterState];
+        //　下面方法可用
+//        [self.subCategoryTableView.mj_footer endRefreshing];
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error){
+        
+        
+    }];
+
+
+
+
+
+}
+//设置基本信息子视图
 - (void)setUpTableView
 {
+//    self.title = @"推荐关注";
+    self.navigationItem.title = @"推荐关注";
     [self.catagoriesTableView registerNib:[UINib nibWithNibName:NSStringFromClass([LYRecommendCell class])  bundle:nil]forCellReuseIdentifier:LYCategoryID];
     
     
-    [self.subCategoryTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:LYSubCategoryID];
+    [self.subCategoryTableView registerNib:[UINib nibWithNibName:NSStringFromClass([LYRecommendUserCell class]) bundle:nil] forCellReuseIdentifier:LYSubCategoryID];
+    
+    self.subCategoryTableView.rowHeight = 70;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.subCategoryTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
@@ -85,17 +193,32 @@ static NSString *LYSubCategoryID = @"subcategory";
 
 
 }
+- (void)checkFooterState
+{
+    self.subCategoryTableView.footer.hidden = (self.clickedCategory.usrs.count == 0);
+    
+    if (self.clickedCategory.usrs.count == self.clickedCategory.total)
+    {
+        [self.subCategoryTableView.footer noticeNoMoreData];
+    }else
+    {
+        [self.subCategoryTableView.footer endRefreshing];
+    
+    }
+    
+    
+}
 #pragma mark - <UITableViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.catagoriesTableView)
-    {
-        return self.categories.count;
-    }
-    else{
-        return self.recommendUsers.count;
-    }
+    if (tableView == self.catagoriesTableView) return self.categories.count;
+
+    [self checkFooterState];
+
+    LYRecommendCategory *c = self.categories[self.catagoriesTableView.indexPathForSelectedRow.row];
+    return c.usrs.count;
+   
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -109,14 +232,12 @@ static NSString *LYSubCategoryID = @"subcategory";
         return cell;
     }else
     {
-        LYRecommendUser *category = self.recommendUsers[indexPath.row];
+        LYRecommendCategory *c = self.categories[self.catagoriesTableView.indexPathForSelectedRow.row];
         
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:LYSubCategoryID];
+        LYRecommendUserCell *cell = [tableView dequeueReusableCellWithIdentifier:LYSubCategoryID];
         
-        cell.textLabel.text = category.screen_name;
+        cell.user = c.usrs[indexPath.row];
         
-        cell.textLabel.frame = CGRectMake(0, 0, 20, 20);
-    
         return cell;
     }
 }
@@ -125,23 +246,27 @@ static NSString *LYSubCategoryID = @"subcategory";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LYRecommendCategory *category = self.categories[indexPath.row];
-    
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
-    params[@"c"] = @"subscribe";
-    params[@"category_id"] = @(category.id);
-    
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask *task,id responseObject){
-    
-        self.recommendUsers = [LYRecommendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+    self.clickedCategory = category;
+    if (category.usrs.count)
+    {
         
-        [self.subCategoryTableView reloadData];
-    
-    } failure:^(NSURLSessionDataTask *task, NSError *error){
-    
-    
-    }];
+         [self.subCategoryTableView reloadData];
+        
+    }else {
+        // 进入了右侧界面，立刻刷新
+         [self.subCategoryTableView reloadData];
+        
+        //开始下拉刷新状态
+        
+        [self.subCategoryTableView.header beginRefreshing];
+       
 
+    }
 }
 
+/**
+ 1.目前只能显示1页数据
+ 2.重复发送请求
+ 3.网络慢带来的细节问题
+ */
 @end

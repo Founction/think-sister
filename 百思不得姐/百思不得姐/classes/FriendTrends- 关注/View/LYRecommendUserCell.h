@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class LYRecommendUser;
 @interface LYRecommendUserCell : UITableViewCell
+
+/* 模型 */
+@property (strong, nonatomic) LYRecommendUser * user;
 
 @end

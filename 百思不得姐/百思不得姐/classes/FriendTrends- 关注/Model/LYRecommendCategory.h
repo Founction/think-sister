@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface LYRecommendCategory : NSObject
 /* id */
 @property (assign, nonatomic) NSInteger id;
@@ -15,4 +16,10 @@
 @property (assign, nonatomic) NSInteger count;
 /* name */
 @property (strong, nonatomic) NSString * name;
+/* user */
+@property (strong, nonatomic) NSMutableArray * usrs;
+/* 指示当前更新总数 */
+@property (assign, nonatomic) NSInteger total;
+/* 当前页数 */
+@property (assign, nonatomic) NSInteger page;
 @end

@@ -9,5 +9,12 @@
 #import "LYRecommendCategory.h"
 
 @implementation LYRecommendCategory
+- (NSMutableArray *)usrs
+{
+    if (!_usrs) {
+        _usrs = [NSMutableArray array];
+    }
 
+    return _usrs;
+}
 @end
