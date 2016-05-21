@@ -14,6 +14,12 @@
 		6B1AB2FA1CEEE1DD004995A2 /* LYRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2F91CEEE1DD004995A2 /* LYRecommendUser.m */; };
 		6B1AB2FE1CEEEA54004995A2 /* LYRecommendUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2FC1CEEEA53004995A2 /* LYRecommendUserCell.m */; };
 		6B1AB2FF1CEEEA54004995A2 /* LYRecommendUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1AB2FD1CEEEA53004995A2 /* LYRecommendUserCell.xib */; };
+		6BA2EC371CF035A500678794 /* LYLoginRigesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2EC351CF035A500678794 /* LYLoginRigesterViewController.m */; };
+		6BA2EC381CF035A500678794 /* LYLoginRigesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2EC361CF035A500678794 /* LYLoginRigesterViewController.xib */; };
+		6BA2EC3B1CF0406C00678794 /* LYVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2EC3A1CF0406C00678794 /* LYVerticalButton.m */; };
+		6BA2EC3E1CF06F4800678794 /* LYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2EC3D1CF06F4800678794 /* LYTextField.m */; };
+		6BA2EC411CF0945D00678794 /* LYPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2EC401CF0945D00678794 /* LYPushGuideView.m */; };
+		6BA2EC431CF0946900678794 /* LYPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2EC421CF0946900678794 /* LYPushGuideView.xib */; };
 		6BB948231CED6488000E6CE5 /* LYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB9480D1CED6488000E6CE5 /* LYTabBar.m */; };
 		6BB948241CED6488000E6CE5 /* LYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB948101CED6488000E6CE5 /* LYTabBarController.m */; };
 		6BB948251CED6488000E6CE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB9481B1CED6488000E6CE5 /* AppDelegate.m */; };
@@ -59,6 +65,16 @@
 		6B1AB2FB1CEEEA53004995A2 /* LYRecommendUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendUserCell.h; sourceTree = "<group>"; };
 		6B1AB2FC1CEEEA53004995A2 /* LYRecommendUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendUserCell.m; sourceTree = "<group>"; };
 		6B1AB2FD1CEEEA53004995A2 /* LYRecommendUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYRecommendUserCell.xib; sourceTree = "<group>"; };
+		6BA2EC341CF035A500678794 /* LYLoginRigesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYLoginRigesterViewController.h; sourceTree = "<group>"; };
+		6BA2EC351CF035A500678794 /* LYLoginRigesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYLoginRigesterViewController.m; sourceTree = "<group>"; };
+		6BA2EC361CF035A500678794 /* LYLoginRigesterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYLoginRigesterViewController.xib; sourceTree = "<group>"; };
+		6BA2EC391CF0406C00678794 /* LYVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYVerticalButton.h; sourceTree = "<group>"; };
+		6BA2EC3A1CF0406C00678794 /* LYVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYVerticalButton.m; sourceTree = "<group>"; };
+		6BA2EC3C1CF06F4800678794 /* LYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTextField.h; sourceTree = "<group>"; };
+		6BA2EC3D1CF06F4800678794 /* LYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTextField.m; sourceTree = "<group>"; };
+		6BA2EC3F1CF0945D00678794 /* LYPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYPushGuideView.h; sourceTree = "<group>"; };
+		6BA2EC401CF0945D00678794 /* LYPushGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYPushGuideView.m; sourceTree = "<group>"; };
+		6BA2EC421CF0946900678794 /* LYPushGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYPushGuideView.xib; sourceTree = "<group>"; };
 		6BB9480C1CED6488000E6CE5 /* LYTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTabBar.h; sourceTree = "<group>"; };
 		6BB9480D1CED6488000E6CE5 /* LYTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTabBar.m; sourceTree = "<group>"; };
 		6BB9480F1CED6488000E6CE5 /* LYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTabBarController.h; sourceTree = "<group>"; };
@@ -198,6 +214,10 @@
 				6B1AB2FB1CEEEA53004995A2 /* LYRecommendUserCell.h */,
 				6B1AB2FC1CEEEA53004995A2 /* LYRecommendUserCell.m */,
 				6B1AB2FD1CEEEA53004995A2 /* LYRecommendUserCell.xib */,
+				6BA2EC391CF0406C00678794 /* LYVerticalButton.h */,
+				6BA2EC3A1CF0406C00678794 /* LYVerticalButton.m */,
+				6BA2EC3C1CF06F4800678794 /* LYTextField.h */,
+				6BA2EC3D1CF06F4800678794 /* LYTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +228,9 @@
 				6BB9482B1CED66C4000E6CE5 /* LYFriendTrendsController.h */,
 				6BB9482C1CED66C4000E6CE5 /* LYFriendTrendsController.m */,
 				6BB9483D1CED93F8000E6CE5 /* LYFriendTrendsController.xib */,
+				6BA2EC341CF035A500678794 /* LYLoginRigesterViewController.h */,
+				6BA2EC351CF035A500678794 /* LYLoginRigesterViewController.m */,
+				6BA2EC361CF035A500678794 /* LYLoginRigesterViewController.xib */,
 				6BB9483F1CEDA9E0000E6CE5 /* LYRecommendViewController.h */,
 				6BB948401CEDA9E0000E6CE5 /* LYRecommendViewController.m */,
 				6B1AB2EE1CEEA92D004995A2 /* LYRecommendViewController.xib */,
@@ -237,6 +260,9 @@
 			children = (
 				6BB9480C1CED6488000E6CE5 /* LYTabBar.h */,
 				6BB9480D1CED6488000E6CE5 /* LYTabBar.m */,
+				6BA2EC3F1CF0945D00678794 /* LYPushGuideView.h */,
+				6BA2EC401CF0945D00678794 /* LYPushGuideView.m */,
+				6BA2EC421CF0946900678794 /* LYPushGuideView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -510,7 +536,9 @@
 				6BF2E5AE1CEC12B1009FEC87 /* Main.storyboard in Resources */,
 				6B1AB2EF1CEEA92D004995A2 /* LYRecommendViewController.xib in Resources */,
 				6BF2E5B31CEC12B2009FEC87 /* LaunchScreen.xib in Resources */,
+				6BA2EC381CF035A500678794 /* LYLoginRigesterViewController.xib in Resources */,
 				6B1AB2F71CEEB8AE004995A2 /* LYRecommendCell.xib in Resources */,
+				6BA2EC431CF0946900678794 /* LYPushGuideView.xib in Resources */,
 				6BB9483E1CED93F8000E6CE5 /* LYFriendTrendsController.xib in Resources */,
 				6BF2E5B01CEC12B2009FEC87 /* Images.xcassets in Resources */,
 			);
@@ -587,8 +615,12 @@
 				6B1AB2F51CEEB89F004995A2 /* LYRecommendCell.m in Sources */,
 				6BB948271CED6488000E6CE5 /* UIView+LYFrame.m in Sources */,
 				6BB9482D1CED66C4000E6CE5 /* LYFriendTrendsController.m in Sources */,
+				6BA2EC371CF035A500678794 /* LYLoginRigesterViewController.m in Sources */,
+				6BA2EC3E1CF06F4800678794 /* LYTextField.m in Sources */,
 				6BB948231CED6488000E6CE5 /* LYTabBar.m in Sources */,
 				6B1AB2F21CEEB2A7004995A2 /* LYRecommendCategory.m in Sources */,
+				6BA2EC3B1CF0406C00678794 /* LYVerticalButton.m in Sources */,
+				6BA2EC411CF0945D00678794 /* LYPushGuideView.m in Sources */,
 				6BB948301CED66E8000E6CE5 /* LYMeViewController.m in Sources */,
 				6BB948261CED6488000E6CE5 /* main.m in Sources */,
 				6BB948391CED7162000E6CE5 /* UIBarButtonItem+LYExtension.m in Sources */,

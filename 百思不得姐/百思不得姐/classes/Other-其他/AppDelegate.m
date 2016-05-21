@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LYTabBarController.h"
+#import "LYPushGuideView.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +27,7 @@
     
     [self.window makeKeyAndVisible];
     
-    
+    [LYPushGuideView show];
     return YES;
 }
 

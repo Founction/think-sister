@@ -73,10 +73,10 @@ static NSString *LYSubCategoryID = @"subcategory";
         
         [self.catagoriesTableView reloadData];
         
-        
+        [self.catagoriesTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
     }failure:^(NSURLSessionDataTask *task, NSError *error){
         
-        
+        [SVProgressHUD showErrorWithStatus:@"加载推荐信息失败!"];
         
     }];
 
@@ -123,7 +123,11 @@ static NSString *LYSubCategoryID = @"subcategory";
         
         [self checkFooterState];
     } failure:^(NSURLSessionDataTask *task, NSError *error){
+        // 提醒
+        [SVProgressHUD showErrorWithStatus:@"加载用户数据失败"];
         
+        // 结束刷新
+        [self.subCategoryTableView.header endRefreshing];
         
     }];
 
@@ -161,7 +165,11 @@ static NSString *LYSubCategoryID = @"subcategory";
 //        [self.subCategoryTableView.mj_footer endRefreshing];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error){
+        // 提醒
+        [SVProgressHUD showErrorWithStatus:@"加载用户数据失败"];
         
+        // 结束刷新
+        [self.subCategoryTableView.header endRefreshing];
         
     }];
 

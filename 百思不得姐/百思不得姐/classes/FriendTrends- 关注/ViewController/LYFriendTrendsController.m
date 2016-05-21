@@ -9,6 +9,7 @@
 #import "LYFriendTrendsController.h"
 
 #import "LYRecommendViewController.h"
+#import "LYLoginRigesterViewController.h"
 
 @interface LYFriendTrendsController ()
 
@@ -29,21 +30,12 @@
     [self.navigationController pushViewController:[[LYRecommendViewController alloc] init] animated:YES];
 
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+- (IBAction)loginRegister:(id)sender
+{
+    LYLoginRigesterViewController *loginRigesterVC = [[LYLoginRigesterViewController alloc] init];
+    
+    [self presentViewController:loginRigesterVC animated:YES completion:nil];
 }
 
 /*
