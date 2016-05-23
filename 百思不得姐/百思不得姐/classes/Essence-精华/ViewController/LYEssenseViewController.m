@@ -9,10 +9,21 @@
 #import "LYEssenseViewController.h"
 #import "LYEssenseTitle.h"
 #import "LYEssenceTitleView.h"
+#import "LYRecommendTagsViewController.h"
+#import "LYAllViewController.h"
+#import "LYWordViewController.h"
+#import "LYViedoViewController.h"
+#import "LYPictureViewController.h"
+#import "LYVoiceViewController.h"
 
-@interface LYEssenseViewController ()
+@interface LYEssenseViewController ()<UIScrollViewDelegate,LYEssenceTitleViewDelegate>
 /* titleNames */
 @property (strong, nonatomic) NSArray * titleNames;
+
+/* 滚动时图 */
+@property (strong, nonatomic) UIScrollView * contentView;
+/* 标题拦 */
+@property (strong, nonatomic) LYEssenceTitleView * titleV;
 
 @end
 
@@ -20,18 +31,60 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //设置导航栏
     [self setUpNav];
-    
+    //加载所有的子控制器
+    [self setUpAllChildViewController];
+   
+    //设置标题view
     [self setUpTitleView];
+    //设置滚动时图
+    [self setUpContentView];
+}
+//设置滚动时图
+- (void)setUpContentView
+{
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    UIScrollView *contentView = [[UIScrollView alloc] init];
+    contentView.frame = self.view.bounds;
+    contentView.pagingEnabled = YES;
+    contentView.delegate = self;
+    [self.view insertSubview:contentView atIndex:0];
+    
+    contentView.contentSize = CGSizeMake(contentView.width * self.childViewControllers.count, 0);
+   
+    self.contentView = contentView;
+    
+    //一开始就默认显示一个控制器
+    [self scrollViewDidEndScrollingAnimation:contentView];
+
+
+}
+//加载所有的子控制器
+- (void)setUpAllChildViewController
+{
+    LYAllViewController *allVC = [[LYAllViewController alloc] init];
+    LYViedoViewController *videoVC = [[LYViedoViewController alloc] init];
+    LYViedoViewController *voiceVC = [[LYViedoViewController alloc] init];
+    LYPictureViewController *pictureVC = [[LYPictureViewController alloc] init];
+    LYWordViewController *wordVC =[[LYWordViewController alloc] init];
+    [self addChildViewController:allVC];
+    [self addChildViewController:videoVC];
+    [self addChildViewController:voiceVC];
+    [self addChildViewController:pictureVC];
+    [self addChildViewController:wordVC];
+
 }
 - (void)setUpTitleView
 {
     NSArray *arr = @[@"全部",@"视频", @"声音", @"图片", @"段子"];
     self.titleNames = [LYEssenseTitle initWithArray:arr];
-    LYEssenceTitleView *titleV = [[LYEssenceTitleView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, 35)];
+    LYEssenceTitleView *titleV = [[LYEssenceTitleView alloc] initWithFrame:CGRectMake(0, LYTitleViewY, self.view.width,LYTitleViewH)];
     titleV.titles = _titleNames;
     titleV.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+    self.titleV = titleV;
+    titleV.delegate = self;
+    
     
     [self.view addSubview:titleV];
     
@@ -46,72 +99,50 @@
 }
 - (void)tagClick
 {
-
-}
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    LYRecommendTagsViewController *recommendVc = [[LYRecommendTagsViewController alloc] init];
     
-    // Configure the cell...
+    [self.navigationController pushViewController:recommendVc animated:YES];
+}
+#pragma mark <UIScrollViewDelegate>
+//滚动停止的时候要切换view（已经完全进入下一个界面）
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    CGFloat offsetX = scrollView.contentOffset.x;
+    NSInteger i = offsetX / self.view.width;
+    UITableViewController *vc = self.childViewControllers[i];
+//    vc.view.frame = CGRectMake(scrollView.contentOffset.x, 0, self.view.width, scrollView.height);
+    vc.tableView.x = scrollView.contentOffset.x;
+    vc.tableView.y = 0; // 设置控制器view的y值为0(默认是20)
+    vc.tableView.height = scrollView.height; // 设置控制器view的height值为整个屏幕的高度(默认是比屏幕高度少个20)
+    CGFloat buttom = self.tabBarController.tabBar.height;
+    CGFloat top = CGRectGetMaxY(self.titleV.frame);
+    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, buttom,0);
+   
+    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
+    [scrollView addSubview:vc.view];
+
+}
+//即将进入下一个界面的时候会调用
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+
+    [self scrollViewDidEndScrollingAnimation:scrollView];
     
-    return cell;
-}
-*/
+    //按钮跟着滑动一起
+    NSInteger index = scrollView.contentOffset.x / self.view.width;
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    [self.titleV titleClick:self.titleV.subviews[index]];
+    
+    
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+#pragma mark <LYEssenceTitleViewDelegate>
+- (void)essenceTitleView:(LYEssenceTitleView *)titleView ButtonTag:(NSInteger)tag
+{
+    CGPoint offset = self.contentView.contentOffset;
+    offset.x = self.contentView.width * tag;
+    
+    [self.contentView setContentOffset:offset animated:YES];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

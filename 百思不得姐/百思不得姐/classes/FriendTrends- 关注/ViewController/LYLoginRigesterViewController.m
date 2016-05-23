@@ -58,6 +58,10 @@
     return UIStatusBarStyleLightContent;
 
 }
+- (IBAction)closeLogView:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 /*
 #pragma mark - Navigation
 

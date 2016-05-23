@@ -23,7 +23,7 @@
     
     self.sceen_name.text = user.screen_name;
     
-    [self.icon sd_setImageWithURL:[NSURL URLWithString:user.header] placeholderImage:[UIImage imageNamed:@""]];
+    [self.icon sd_setImageWithURL:[NSURL URLWithString:user.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
 
 
 }

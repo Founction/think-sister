@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LYEssenceTitleView;
+@protocol LYEssenceTitleViewDelegate <NSObject>
+@optional
+
+- (void)essenceTitleView:(LYEssenceTitleView *)titleView ButtonTag:(NSInteger)tag;
+@end
 
 @interface LYEssenceTitleView : UIView
-
 /* model array */
 @property (strong, nonatomic) NSArray  * titles;
+/* delegate */
+@property (weak, nonatomic) id<LYEssenceTitleViewDelegate> delegate;
 
+- (void)titleClick:(UIButton *)button;
 @end

@@ -118,6 +118,9 @@
                         <constraint firstAttribute="height" constant="16" id="jCk-yY-8ag"/>
                     </constraints>
                     <state key="normal" image="login_close_icon"/>
+                    <connections>
+                        <action selector="closeLogView:" destination="-1" eventType="touchUpInside" id="EH3-1k-xuY"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4W-kB-LMT" userLabel="登录框">
                     <rect key="frame" x="0.0" y="81" width="375" height="250"/>
@@ -319,7 +322,7 @@
                     <exclude reference="UQL-gV-Hjx"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="119.5" y="403.5"/>
+            <point key="canvasLocation" x="425.5" y="456.5"/>
         </view>
     </objects>
     <resources>

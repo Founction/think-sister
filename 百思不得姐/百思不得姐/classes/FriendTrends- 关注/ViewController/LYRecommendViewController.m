@@ -30,12 +30,21 @@ static NSString *LYSubCategoryID = @"subcategory";
 @property (strong, nonatomic) LYRecommendCategory * clickedCategory;
 /* 纪录最后一次请求 */
 @property (strong, nonatomic) NSMutableDictionary * param;
+/* request */
+@property (strong, nonatomic) AFHTTPSessionManager * manager;
 
 
 @end
 
 @implementation LYRecommendViewController
-
+- (AFHTTPSessionManager *)manager
+{
+    if (_manager == nil)
+    {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -63,7 +72,7 @@ static NSString *LYSubCategoryID = @"subcategory";
     params[@"a"] = @"category";
     params[@"c"] = @"subscribe";
     
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         
         //解析数据
         //模拟一个蒙板
@@ -74,6 +83,8 @@ static NSString *LYSubCategoryID = @"subcategory";
         [self.catagoriesTableView reloadData];
         
         [self.catagoriesTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+        
+        [self.subCategoryTableView.mj_header beginRefreshing];
         
     }failure:^(NSURLSessionDataTask *task, NSError *error){
         
@@ -98,7 +109,8 @@ static NSString *LYSubCategoryID = @"subcategory";
 //右侧下拉刷新
 - (void)loadNewUsers
 {
-
+    self.clickedCategory = self.categories[self.catagoriesTableView.indexPathForSelectedRow.row];
+    
     self.clickedCategory.page = 1;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
@@ -107,7 +119,7 @@ static NSString *LYSubCategoryID = @"subcategory";
     params[@"page"] = @(self.clickedCategory.page);
     self.param = params;
     
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask *task,id responseObject){
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask *task,id responseObject){
         
         //为了避免每次请求都会将添加到模型数组中，导致数组变大。每次刷新的时候应该把之前保存的模型数组删除
         [self.clickedCategory.usrs removeAllObjects];
@@ -145,7 +157,7 @@ static NSString *LYSubCategoryID = @"subcategory";
     params[@"page"] = @(++self.clickedCategory.page);
     self.param = params;
     
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask *task,id responseObject){
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask *task,id responseObject){
         
 //        self.clickedCategory.usrs = [LYRecommendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
  
@@ -272,7 +284,12 @@ static NSString *LYSubCategoryID = @"subcategory";
 
     }
 }
+- (void)dealloc
+{
 
+    [self.manager.operationQueue cancelAllOperations];
+
+}
 /**
  1.目前只能显示1页数据
  2.重复发送请求

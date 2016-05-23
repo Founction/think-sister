@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B02599B1CF155D60049AF38 /* LYRecommendTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B02599A1CF155D60049AF38 /* LYRecommendTagsViewController.m */; };
+		6B02599E1CF156940049AF38 /* LYRecommendTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B02599D1CF156940049AF38 /* LYRecommendTag.m */; };
+		6B0259A11CF15A220049AF38 /* LYRecommendTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259A01CF15A220049AF38 /* LYRecommendTagCell.m */; };
+		6B0259A31CF15A2E0049AF38 /* LYRecommendTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0259A21CF15A2E0049AF38 /* LYRecommendTagCell.xib */; };
+		6B0259A61CF18C3E0049AF38 /* LYAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259A51CF18C3E0049AF38 /* LYAllViewController.m */; };
+		6B0259A91CF18C680049AF38 /* LYViedoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259A81CF18C680049AF38 /* LYViedoViewController.m */; };
+		6B0259AC1CF18C7A0049AF38 /* LYVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259AB1CF18C7A0049AF38 /* LYVoiceViewController.m */; };
+		6B0259AF1CF18C8C0049AF38 /* LYPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259AE1CF18C8C0049AF38 /* LYPictureViewController.m */; };
+		6B0259B21CF18C9B0049AF38 /* LYWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259B11CF18C9B0049AF38 /* LYWordViewController.m */; };
+		6B0259B51CF1C3990049AF38 /* LYWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259B41CF1C3990049AF38 /* LYWord.m */; };
+		6B0259B81CF29BBC0049AF38 /* LYConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259B71CF29BBC0049AF38 /* LYConst.m */; };
 		6B1AB2EF1CEEA92D004995A2 /* LYRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1AB2EE1CEEA92D004995A2 /* LYRecommendViewController.xib */; };
 		6B1AB2F21CEEB2A7004995A2 /* LYRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2F11CEEB2A7004995A2 /* LYRecommendCategory.m */; };
 		6B1AB2F51CEEB89F004995A2 /* LYRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2F41CEEB89F004995A2 /* LYRecommendCell.m */; };
@@ -56,6 +67,27 @@
 		2B45021F8892E3917CC6D4F7 /* Pods-百思不得姐.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐.debug.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐.debug.xcconfig"; sourceTree = "<group>"; };
 		5CA081EA33BA78015ACF9731 /* Pods-百思不得姐.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐.release.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐.release.xcconfig"; sourceTree = "<group>"; };
 		68F13D7301B48F203D4BC240 /* libPods-百思不得姐.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-百思不得姐.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B0259991CF155D60049AF38 /* LYRecommendTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendTagsViewController.h; sourceTree = "<group>"; };
+		6B02599A1CF155D60049AF38 /* LYRecommendTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendTagsViewController.m; sourceTree = "<group>"; };
+		6B02599C1CF156940049AF38 /* LYRecommendTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendTag.h; sourceTree = "<group>"; };
+		6B02599D1CF156940049AF38 /* LYRecommendTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendTag.m; sourceTree = "<group>"; };
+		6B02599F1CF15A220049AF38 /* LYRecommendTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendTagCell.h; sourceTree = "<group>"; };
+		6B0259A01CF15A220049AF38 /* LYRecommendTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendTagCell.m; sourceTree = "<group>"; };
+		6B0259A21CF15A2E0049AF38 /* LYRecommendTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYRecommendTagCell.xib; sourceTree = "<group>"; };
+		6B0259A41CF18C3E0049AF38 /* LYAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYAllViewController.h; sourceTree = "<group>"; };
+		6B0259A51CF18C3E0049AF38 /* LYAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYAllViewController.m; sourceTree = "<group>"; };
+		6B0259A71CF18C680049AF38 /* LYViedoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYViedoViewController.h; sourceTree = "<group>"; };
+		6B0259A81CF18C680049AF38 /* LYViedoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYViedoViewController.m; sourceTree = "<group>"; };
+		6B0259AA1CF18C7A0049AF38 /* LYVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYVoiceViewController.h; sourceTree = "<group>"; };
+		6B0259AB1CF18C7A0049AF38 /* LYVoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYVoiceViewController.m; sourceTree = "<group>"; };
+		6B0259AD1CF18C8C0049AF38 /* LYPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYPictureViewController.h; sourceTree = "<group>"; };
+		6B0259AE1CF18C8C0049AF38 /* LYPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYPictureViewController.m; sourceTree = "<group>"; };
+		6B0259B01CF18C9B0049AF38 /* LYWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYWordViewController.h; sourceTree = "<group>"; };
+		6B0259B11CF18C9B0049AF38 /* LYWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYWordViewController.m; sourceTree = "<group>"; };
+		6B0259B31CF1C3990049AF38 /* LYWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYWord.h; sourceTree = "<group>"; };
+		6B0259B41CF1C3990049AF38 /* LYWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYWord.m; sourceTree = "<group>"; };
+		6B0259B61CF29BBC0049AF38 /* LYConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYConst.h; sourceTree = "<group>"; };
+		6B0259B71CF29BBC0049AF38 /* LYConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYConst.m; sourceTree = "<group>"; };
 		6B1AB2EE1CEEA92D004995A2 /* LYRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYRecommendViewController.xib; sourceTree = "<group>"; };
 		6B1AB2F01CEEB2A7004995A2 /* LYRecommendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendCategory.h; sourceTree = "<group>"; };
 		6B1AB2F11CEEB2A7004995A2 /* LYRecommendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendCategory.m; sourceTree = "<group>"; };
@@ -172,6 +204,10 @@
 			children = (
 				6BA2EC471CF0A77300678794 /* LYEssenseTitle.h */,
 				6BA2EC481CF0A77300678794 /* LYEssenseTitle.m */,
+				6B02599C1CF156940049AF38 /* LYRecommendTag.h */,
+				6B02599D1CF156940049AF38 /* LYRecommendTag.m */,
+				6B0259B31CF1C3990049AF38 /* LYWord.h */,
+				6B0259B41CF1C3990049AF38 /* LYWord.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +217,9 @@
 			children = (
 				6BA2EC441CF0A66300678794 /* LYEssenceTitleView.h */,
 				6BA2EC451CF0A66300678794 /* LYEssenceTitleView.m */,
+				6B02599F1CF15A220049AF38 /* LYRecommendTagCell.h */,
+				6B0259A01CF15A220049AF38 /* LYRecommendTagCell.m */,
+				6B0259A21CF15A2E0049AF38 /* LYRecommendTagCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +229,18 @@
 			children = (
 				6BB948281CED66A4000E6CE5 /* LYEssenseViewController.h */,
 				6BB948291CED66A4000E6CE5 /* LYEssenseViewController.m */,
+				6B0259991CF155D60049AF38 /* LYRecommendTagsViewController.h */,
+				6B02599A1CF155D60049AF38 /* LYRecommendTagsViewController.m */,
+				6B0259A41CF18C3E0049AF38 /* LYAllViewController.h */,
+				6B0259A51CF18C3E0049AF38 /* LYAllViewController.m */,
+				6B0259A71CF18C680049AF38 /* LYViedoViewController.h */,
+				6B0259A81CF18C680049AF38 /* LYViedoViewController.m */,
+				6B0259AA1CF18C7A0049AF38 /* LYVoiceViewController.h */,
+				6B0259AB1CF18C7A0049AF38 /* LYVoiceViewController.m */,
+				6B0259AD1CF18C8C0049AF38 /* LYPictureViewController.h */,
+				6B0259AE1CF18C8C0049AF38 /* LYPictureViewController.m */,
+				6B0259B01CF18C9B0049AF38 /* LYWordViewController.h */,
+				6B0259B11CF18C9B0049AF38 /* LYWordViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -359,6 +410,8 @@
 			children = (
 				6BB9481A1CED6488000E6CE5 /* AppDelegate.h */,
 				6BB9481B1CED6488000E6CE5 /* AppDelegate.m */,
+				6B0259B61CF29BBC0049AF38 /* LYConst.h */,
+				6B0259B71CF29BBC0049AF38 /* LYConst.m */,
 				6BB9481C1CED6488000E6CE5 /* LYSisters.pch */,
 				6BB9481F1CED6488000E6CE5 /* UIView+LYFrame.h */,
 				6BB948201CED6488000E6CE5 /* UIView+LYFrame.m */,
@@ -542,6 +595,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0259A31CF15A2E0049AF38 /* LYRecommendTagCell.xib in Resources */,
 				6B1AB2FF1CEEEA54004995A2 /* LYRecommendUserCell.xib in Resources */,
 				6BF2E5AE1CEC12B1009FEC87 /* Main.storyboard in Resources */,
 				6B1AB2EF1CEEA92D004995A2 /* LYRecommendViewController.xib in Resources */,
@@ -617,23 +671,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BB948331CED6724000E6CE5 /* LYNewBBSViewController.m in Sources */,
+				6B0259B21CF18C9B0049AF38 /* LYWordViewController.m in Sources */,
 				6BB9482A1CED66A4000E6CE5 /* LYEssenseViewController.m in Sources */,
 				6BB9483C1CED83E4000E6CE5 /* LYNavigationController.m in Sources */,
 				6BB948241CED6488000E6CE5 /* LYTabBarController.m in Sources */,
 				6B1AB2FA1CEEE1DD004995A2 /* LYRecommendUser.m in Sources */,
 				6BB948411CEDA9E0000E6CE5 /* LYRecommendViewController.m in Sources */,
+				6B02599E1CF156940049AF38 /* LYRecommendTag.m in Sources */,
 				6B1AB2F51CEEB89F004995A2 /* LYRecommendCell.m in Sources */,
+				6B0259AC1CF18C7A0049AF38 /* LYVoiceViewController.m in Sources */,
+				6B0259B51CF1C3990049AF38 /* LYWord.m in Sources */,
 				6BB948271CED6488000E6CE5 /* UIView+LYFrame.m in Sources */,
 				6BB9482D1CED66C4000E6CE5 /* LYFriendTrendsController.m in Sources */,
 				6BA2EC371CF035A500678794 /* LYLoginRigesterViewController.m in Sources */,
 				6BA2EC3E1CF06F4800678794 /* LYTextField.m in Sources */,
 				6BB948231CED6488000E6CE5 /* LYTabBar.m in Sources */,
+				6B0259B81CF29BBC0049AF38 /* LYConst.m in Sources */,
+				6B0259A61CF18C3E0049AF38 /* LYAllViewController.m in Sources */,
+				6B0259AF1CF18C8C0049AF38 /* LYPictureViewController.m in Sources */,
 				6BA2EC491CF0A77300678794 /* LYEssenseTitle.m in Sources */,
 				6B1AB2F21CEEB2A7004995A2 /* LYRecommendCategory.m in Sources */,
+				6B02599B1CF155D60049AF38 /* LYRecommendTagsViewController.m in Sources */,
 				6BA2EC3B1CF0406C00678794 /* LYVerticalButton.m in Sources */,
 				6BA2EC411CF0945D00678794 /* LYPushGuideView.m in Sources */,
 				6BB948301CED66E8000E6CE5 /* LYMeViewController.m in Sources */,
 				6BB948261CED6488000E6CE5 /* main.m in Sources */,
+				6B0259A11CF15A220049AF38 /* LYRecommendTagCell.m in Sources */,
+				6B0259A91CF18C680049AF38 /* LYViedoViewController.m in Sources */,
 				6BA2EC461CF0A66300678794 /* LYEssenceTitleView.m in Sources */,
 				6BB948391CED7162000E6CE5 /* UIBarButtonItem+LYExtension.m in Sources */,
 				6B1AB2FE1CEEEA54004995A2 /* LYRecommendUserCell.m in Sources */,
