@@ -6,7 +6,7 @@
 //  Copyright © 2016年 dasheng. All rights reserved.
 //
 
-#import "LYWordViewController.h"
+#import "LYTopicsViewController.h"
 #import <AFNetworking.h>
 #import "LYWord.h"
 #import <MJExtension.h>
@@ -14,7 +14,7 @@
 #import <MJRefresh.h>
 #import "LYWordCell.h"
 
-@interface LYWordViewController ()
+@interface LYTopicsViewController()
 /* 请求 */
 @property (strong, nonatomic) AFHTTPSessionManager * manager;
 /* models */
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation LYWordViewController
+@implementation LYTopicsViewController
 - (NSMutableArray *)words
 {
     if (_words == nil)
@@ -36,7 +36,7 @@
         _words = [NSMutableArray array];
     }
     return _words;
-
+    
 }
 - (AFHTTPSessionManager *)manager
 {
@@ -68,7 +68,7 @@ static NSString * const LYWordCellID = @"wordcell";
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.rowHeight = 200;
-
+    
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LYWordCell class]) bundle:nil] forCellReuseIdentifier:LYWordCellID];
 }
 - (void)setUpRefresh
@@ -77,40 +77,40 @@ static NSString * const LYWordCellID = @"wordcell";
     [self.tableView.header beginRefreshing];
     self.tableView.header.automaticallyChangeAlpha = YES;
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreWord)];
-
-
+    
+    
 }
 - (void)loadNewWord
 {
-     [self.tableView.footer endRefreshing];
+    [self.tableView.footer endRefreshing];
     
-        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @(self.type);
+    self.param = params;
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask *task,id responseObject){
+        if (self.param != params) return ;
         
-        params[@"a"] = @"list";
-        params[@"c"] = @"data";
-        params[@"type"] = @"29";
-        self.param = params;
-        [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask *task,id responseObject){
-            if (self.param != params) return ;
-            
-            [self.tableView.header endRefreshing];
-            //字典－>模型
-            self.words = [LYWord mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-            
-            self.maxtime = responseObject[@"info"][@"maxtime"];
-            //刷新表格
-            [self.tableView reloadData];
-            //清空页码
-            self.page = 0;
-            //停止刷新
-            [self.tableView.header endRefreshing];
-        } failure:^(NSURLSessionDataTask *task,NSError *error){
+        [self.tableView.header endRefreshing];
+        //字典－>模型
+        self.words = [LYWord mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
-           if (self.param != params) return ;
-            
-            [self.tableView.header endRefreshing];
-        }];
-
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        //刷新表格
+        [self.tableView reloadData];
+        //清空页码
+        self.page = 0;
+        //停止刷新
+        [self.tableView.header endRefreshing];
+    } failure:^(NSURLSessionDataTask *task,NSError *error){
+        
+        if (self.param != params) return ;
+        
+        [self.tableView.header endRefreshing];
+    }];
+    
 }
 - (void)loadMoreWord
 {
@@ -121,7 +121,7 @@ static NSString * const LYWordCellID = @"wordcell";
     
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.type);
     params[@"maxtime"] = self.maxtime;
     params[@"page"] = @(++self.page);
     
@@ -130,7 +130,7 @@ static NSString * const LYWordCellID = @"wordcell";
         if (self.param != params) return ;
         
         [self.tableView.header endRefreshing];
-
+        
         [self.words addObjectsFromArray:[LYWord mj_objectArrayWithKeyValuesArray:responseObject[@"list"]]];
         
         [self.tableView reloadData];
@@ -171,13 +171,13 @@ static NSString * const LYWordCellID = @"wordcell";
     CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - 4 * LYWordViewMargin, MAXFLOAT);
     
     CGFloat textH = [word.text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.height;
-
+    
     return LYWordViewTextY + textH + LYWordViewButtonH + 2 * LYWordViewMargin;
-
+    
 }
 - (void)dealloc
 {
     [self.manager.operationQueue cancelAllOperations];
-
+    
 }
 @end

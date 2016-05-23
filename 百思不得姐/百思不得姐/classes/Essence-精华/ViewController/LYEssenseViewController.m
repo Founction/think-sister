@@ -15,6 +15,7 @@
 #import "LYViedoViewController.h"
 #import "LYPictureViewController.h"
 #import "LYVoiceViewController.h"
+#import "LYTopicsViewController.h"
 
 @interface LYEssenseViewController ()<UIScrollViewDelegate,LYEssenceTitleViewDelegate>
 /* titleNames */
@@ -63,17 +64,30 @@
 //加载所有的子控制器
 - (void)setUpAllChildViewController
 {
-    LYAllViewController *allVC = [[LYAllViewController alloc] init];
-    LYViedoViewController *videoVC = [[LYViedoViewController alloc] init];
-    LYViedoViewController *voiceVC = [[LYViedoViewController alloc] init];
-    LYPictureViewController *pictureVC = [[LYPictureViewController alloc] init];
-    LYWordViewController *wordVC =[[LYWordViewController alloc] init];
+    LYTopicsViewController *allVC = [[LYTopicsViewController alloc] init];
+    allVC.title = @"全部";
+    allVC.type = LYTopicsTypeAll;
+    
+   LYTopicsViewController *videoVC = [[LYTopicsViewController alloc] init];
+    videoVC.title = @"视频";
+    videoVC.type = LYTopicsTypeVideo;
+    
+    LYTopicsViewController*voiceVC = [[LYTopicsViewController alloc] init];
+    voiceVC.title = @"声音";
+    videoVC.type = LYTopicsTypeVoice;
+    
+    LYTopicsViewController *pictureVC = [[LYTopicsViewController alloc] init];
+    pictureVC.title =@"图片";
+    pictureVC.type = LYTopicsTypePicture;
+    
+   LYTopicsViewController *wordVC =[[LYTopicsViewController alloc] init];
+    wordVC.title = @"段子";
+    wordVC.type = LYTopicsTypeWord;
     [self addChildViewController:allVC];
     [self addChildViewController:videoVC];
     [self addChildViewController:voiceVC];
     [self addChildViewController:pictureVC];
     [self addChildViewController:wordVC];
-
 }
 - (void)setUpTitleView
 {
@@ -114,11 +128,7 @@
     vc.tableView.x = scrollView.contentOffset.x;
     vc.tableView.y = 0; // 设置控制器view的y值为0(默认是20)
     vc.tableView.height = scrollView.height; // 设置控制器view的height值为整个屏幕的高度(默认是比屏幕高度少个20)
-    CGFloat buttom = self.tabBarController.tabBar.height;
-    CGFloat top = CGRectGetMaxY(self.titleV.frame);
-    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, buttom,0);
-   
-    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
+    
     [scrollView addSubview:vc.view];
 
 }

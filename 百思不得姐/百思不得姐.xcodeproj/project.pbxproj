@@ -18,6 +18,10 @@
 		6B0259B21CF18C9B0049AF38 /* LYWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259B11CF18C9B0049AF38 /* LYWordViewController.m */; };
 		6B0259B51CF1C3990049AF38 /* LYWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259B41CF1C3990049AF38 /* LYWord.m */; };
 		6B0259B81CF29BBC0049AF38 /* LYConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259B71CF29BBC0049AF38 /* LYConst.m */; };
+		6B0259BC1CF29E520049AF38 /* LYWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259BA1CF29E520049AF38 /* LYWordCell.m */; };
+		6B0259BD1CF29E520049AF38 /* LYWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0259BB1CF29E520049AF38 /* LYWordCell.xib */; };
+		6B0259C01CF2CAB10049AF38 /* NSDate+LYDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259BF1CF2CAB10049AF38 /* NSDate+LYDate.m */; };
+		6B0259C31CF32BDC0049AF38 /* LYTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0259C21CF32BDC0049AF38 /* LYTopicsViewController.m */; };
 		6B1AB2EF1CEEA92D004995A2 /* LYRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1AB2EE1CEEA92D004995A2 /* LYRecommendViewController.xib */; };
 		6B1AB2F21CEEB2A7004995A2 /* LYRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2F11CEEB2A7004995A2 /* LYRecommendCategory.m */; };
 		6B1AB2F51CEEB89F004995A2 /* LYRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AB2F41CEEB89F004995A2 /* LYRecommendCell.m */; };
@@ -88,6 +92,13 @@
 		6B0259B41CF1C3990049AF38 /* LYWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYWord.m; sourceTree = "<group>"; };
 		6B0259B61CF29BBC0049AF38 /* LYConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYConst.h; sourceTree = "<group>"; };
 		6B0259B71CF29BBC0049AF38 /* LYConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYConst.m; sourceTree = "<group>"; };
+		6B0259B91CF29E520049AF38 /* LYWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYWordCell.h; sourceTree = "<group>"; };
+		6B0259BA1CF29E520049AF38 /* LYWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYWordCell.m; sourceTree = "<group>"; };
+		6B0259BB1CF29E520049AF38 /* LYWordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYWordCell.xib; sourceTree = "<group>"; };
+		6B0259BE1CF2CAB10049AF38 /* NSDate+LYDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LYDate.h"; sourceTree = "<group>"; };
+		6B0259BF1CF2CAB10049AF38 /* NSDate+LYDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LYDate.m"; sourceTree = "<group>"; };
+		6B0259C11CF32BDC0049AF38 /* LYTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTopicsViewController.h; sourceTree = "<group>"; };
+		6B0259C21CF32BDC0049AF38 /* LYTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTopicsViewController.m; sourceTree = "<group>"; };
 		6B1AB2EE1CEEA92D004995A2 /* LYRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYRecommendViewController.xib; sourceTree = "<group>"; };
 		6B1AB2F01CEEB2A7004995A2 /* LYRecommendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRecommendCategory.h; sourceTree = "<group>"; };
 		6B1AB2F11CEEB2A7004995A2 /* LYRecommendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRecommendCategory.m; sourceTree = "<group>"; };
@@ -220,6 +231,9 @@
 				6B02599F1CF15A220049AF38 /* LYRecommendTagCell.h */,
 				6B0259A01CF15A220049AF38 /* LYRecommendTagCell.m */,
 				6B0259A21CF15A2E0049AF38 /* LYRecommendTagCell.xib */,
+				6B0259B91CF29E520049AF38 /* LYWordCell.h */,
+				6B0259BA1CF29E520049AF38 /* LYWordCell.m */,
+				6B0259BB1CF29E520049AF38 /* LYWordCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +255,8 @@
 				6B0259AE1CF18C8C0049AF38 /* LYPictureViewController.m */,
 				6B0259B01CF18C9B0049AF38 /* LYWordViewController.h */,
 				6B0259B11CF18C9B0049AF38 /* LYWordViewController.m */,
+				6B0259C11CF32BDC0049AF38 /* LYTopicsViewController.h */,
+				6B0259C21CF32BDC0049AF38 /* LYTopicsViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -418,6 +434,8 @@
 				6BB9481D1CED6488000E6CE5 /* main.m */,
 				6BB948371CED7162000E6CE5 /* UIBarButtonItem+LYExtension.h */,
 				6BB948381CED7162000E6CE5 /* UIBarButtonItem+LYExtension.m */,
+				6B0259BE1CF2CAB10049AF38 /* NSDate+LYDate.h */,
+				6B0259BF1CF2CAB10049AF38 /* NSDate+LYDate.m */,
 				6BB9481E1CED6488000E6CE5 /* Model */,
 				6BB948211CED6488000E6CE5 /* View */,
 				6BB948221CED6488000E6CE5 /* ViewController */,
@@ -604,6 +622,7 @@
 				6B1AB2F71CEEB8AE004995A2 /* LYRecommendCell.xib in Resources */,
 				6BA2EC431CF0946900678794 /* LYPushGuideView.xib in Resources */,
 				6BB9483E1CED93F8000E6CE5 /* LYFriendTrendsController.xib in Resources */,
+				6B0259BD1CF29E520049AF38 /* LYWordCell.xib in Resources */,
 				6BF2E5B01CEC12B2009FEC87 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,11 +694,13 @@
 				6BB9482A1CED66A4000E6CE5 /* LYEssenseViewController.m in Sources */,
 				6BB9483C1CED83E4000E6CE5 /* LYNavigationController.m in Sources */,
 				6BB948241CED6488000E6CE5 /* LYTabBarController.m in Sources */,
+				6B0259C01CF2CAB10049AF38 /* NSDate+LYDate.m in Sources */,
 				6B1AB2FA1CEEE1DD004995A2 /* LYRecommendUser.m in Sources */,
 				6BB948411CEDA9E0000E6CE5 /* LYRecommendViewController.m in Sources */,
 				6B02599E1CF156940049AF38 /* LYRecommendTag.m in Sources */,
 				6B1AB2F51CEEB89F004995A2 /* LYRecommendCell.m in Sources */,
 				6B0259AC1CF18C7A0049AF38 /* LYVoiceViewController.m in Sources */,
+				6B0259C31CF32BDC0049AF38 /* LYTopicsViewController.m in Sources */,
 				6B0259B51CF1C3990049AF38 /* LYWord.m in Sources */,
 				6BB948271CED6488000E6CE5 /* UIView+LYFrame.m in Sources */,
 				6BB9482D1CED66C4000E6CE5 /* LYFriendTrendsController.m in Sources */,
@@ -692,6 +713,7 @@
 				6BA2EC491CF0A77300678794 /* LYEssenseTitle.m in Sources */,
 				6B1AB2F21CEEB2A7004995A2 /* LYRecommendCategory.m in Sources */,
 				6B02599B1CF155D60049AF38 /* LYRecommendTagsViewController.m in Sources */,
+				6B0259BC1CF29E520049AF38 /* LYWordCell.m in Sources */,
 				6BA2EC3B1CF0406C00678794 /* LYVerticalButton.m in Sources */,
 				6BA2EC411CF0945D00678794 /* LYPushGuideView.m in Sources */,
 				6BB948301CED66E8000E6CE5 /* LYMeViewController.m in Sources */,
